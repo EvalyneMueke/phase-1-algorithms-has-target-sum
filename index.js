@@ -1,5 +1,35 @@
 function hasTargetSum(array, target) {
+
+  // for (let i =0; i <array.length;i++){
+  //   var item1 = array[i]
+
+  //   for(let j= i+1;j<array.length;j++){
+  //     var item2 = array[j]
+
+  //     sum =item1 +item2
+
+  //     if (sum===target){
+  //       return true
+  //     }
+  //   }
+  //   return false
+  // }
   // Write your algorithm here
+
+  const seenNumbers = new Set(); 
+  for (const number of array) {
+    const complement = target - number;
+
+    // has returns true if the Set includes the complement
+    if (seenNumbers.has(complement)) return true;
+
+    // add adds the number to the Set
+    seenNumbers.add(number);
+  }
+  return false;
+
+ 
+  
 }
 
 /* 
@@ -8,6 +38,11 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+
+  write a for loop starting from the start
+  write a for loop starting at the end
+  check if the sum of any of the numbers is equal to 25 then return true
+  else return false
 */
 
 /*
